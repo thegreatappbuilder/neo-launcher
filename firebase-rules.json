@@ -1,0 +1,18 @@
+{
+  "rules": {
+    "launcher": {
+      ".read": true,
+      ".write": "auth != null && auth.uid === 'PUNE_AICI_UID_ADMIN'"
+    },
+    "stats": {
+      ".read": "auth != null && auth.uid === 'PUNE_AICI_UID_ADMIN'",
+      ".write": "auth != null && auth.uid === 'PUNE_AICI_UID_ADMIN'",
+      "$campaign": {
+        "$field": {
+          ".write": "$field === 'views' || $field === 'clicks'",
+          ".validate": "newData.isNumber() && newData.val() === (data.exists() ? data.val() + 1 : 1)"
+        }
+      }
+    }
+  }
+}
