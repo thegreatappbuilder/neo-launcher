@@ -2,11 +2,11 @@
   "rules": {
     "launcher": {
       ".read": true,
-      ".write": "auth != null && auth.uid === 'PUNE_AICI_UID_ADMIN'"
+      ".write": "auth != null && auth.uid === '5ziA8BaKzNeWLCIYHjOcsDMHrrv1'"
     },
     "stats": {
-      ".read": "auth != null && auth.uid === 'PUNE_AICI_UID_ADMIN'",
-      ".write": "auth != null && auth.uid === 'PUNE_AICI_UID_ADMIN'",
+      ".read": "auth != null && auth.uid === '5ziA8BaKzNeWLCIYHjOcsDMHrrv1'",
+      ".write": "auth != null && auth.uid === '5ziA8BaKzNeWLCIYHjOcsDMHrrv1'",
       "$campaign": {
         "$field": {
           ".write": "$field === 'views' || $field === 'clicks'",

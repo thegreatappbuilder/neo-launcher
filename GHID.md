@@ -1,4 +1,19 @@
-# NEO Launcher — ghid de pornire
+# NEO Launcher — ghid
+
+## Totul e deja configurat
+
+| Ce | Unde |
+|---|---|
+| Descarcă APK (mereu ultima versiune) | https://github.com/thegreatappbuilder/neo-launcher/releases/latest/download/NeoLauncher.apk |
+| Panou de admin | https://thegreatappbuilder.github.io/neo-launcher/ |
+| Proiect Firebase | `neo-launcher-e5657` (bază de date în Belgia, europe-west1) |
+| Cont admin | emailul creat în Firebase → Authentication → Users |
+
+Orice modificare urcată în repo construiește automat un APK nou, semnat, în **Releases**.
+Pașii de mai jos sunt doar pentru referință, dacă vreodată refaci totul de la zero.
+
+---
+
 
 Launcher Android futurist cu 4 moduri vizuale (Cyberpunk Neon, Hologramă de sticlă, HUD spațial, Matrix digital), efecte animate la atingere, wallpaper live, APK construit automat pe GitHub și panou de admin pentru reclame popup, banner, temă și actualizări.
 

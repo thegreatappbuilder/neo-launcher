@@ -4,4 +4,6 @@ Launcher Android futurist: 4 moduri vizuale cu efecte animate, wallpaper live, p
 
 ➡ Instrucțiunile complete sunt în [GHID.md](GHID.md).
 
-Descărcare: `https://github.com/UTILIZATOR/REPO/releases/latest/download/NeoLauncher.apk`
+Descărcare: `https://github.com/thegreatappbuilder/neo-launcher/releases/latest/download/NeoLauncher.apk`
+
+Panou de admin: https://thegreatappbuilder.github.io/neo-launcher/
