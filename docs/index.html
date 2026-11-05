@@ -216,8 +216,17 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/fireba
 import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 import { getDatabase, ref, get, set, remove } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
-// Opțional: lipește configurația aici ca să nu o mai introduci în browser.
-const EMBEDDED_CONFIG = null;
+// Configurația proiectului Firebase neo-launcher-e5657 (cheia web Firebase e publică prin design;
+// securitatea vine din regulile bazei de date).
+const EMBEDDED_CONFIG = {
+  apiKey: "AIzaSyCEOLAg5gqn472vFhc7KUAMpXZD50_gdp0",
+  authDomain: "neo-launcher-e5657.firebaseapp.com",
+  databaseURL: "https://neo-launcher-e5657-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "neo-launcher-e5657",
+  storageBucket: "neo-launcher-e5657.firebasestorage.app",
+  messagingSenderId: "921002359880",
+  appId: "1:921002359880:web:0d4ee80020697732d62c7d"
+};
 
 const $ = id => document.getElementById(id);
 const KEY = "neo_admin_firebase";
@@ -268,6 +277,7 @@ $("cfgSave").onclick = () => {
   localStorage.setItem(KEY, JSON.stringify(cfg));
   location.reload();
 };
+if (EMBEDDED_CONFIG) $("resetCfg").classList.add("hidden");
 $("resetCfg").onclick = () => { localStorage.removeItem(KEY); location.reload(); };
 $("loginBtn").onclick = async () => {
   try { await signInWithEmailAndPassword(auth, $("email").value.trim(), $("pass").value); }

@@ -6,6 +6,7 @@ plugins {
 // Valorile vin din GitHub Actions (vezi .github/workflows/build.yml)
 val ksPath: String? = System.getenv("KEYSTORE_FILE")
 val dbUrl: String = (System.getenv("FIREBASE_DB_URL") ?: "").trim()
+    .ifEmpty { "https://neo-launcher-e5657-default-rtdb.europe-west1.firebasedatabase.app" }
 
 android {
     namespace = "com.neo.launcher"
