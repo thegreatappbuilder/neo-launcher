@@ -14,6 +14,7 @@ import android.graphics.drawable.GradientDrawable
 import android.net.ConnectivityManager
 import android.net.Uri
 import android.os.BatteryManager
+import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -41,6 +42,8 @@ import android.widget.LinearLayout
 import android.widget.PopupMenu
 import android.widget.TextView
 import android.widget.Toast
+import android.window.OnBackInvokedCallback
+import android.window.OnBackInvokedDispatcher
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
@@ -118,6 +121,14 @@ class MainActivity : Activity() {
         } catch (_: Exception) {
         }
         reloadApps()
+        if (Build.VERSION.SDK_INT >= 33) {
+            // Android 13+ (și obligatoriu pe Android 16): gestul „înapoi” închide sertarul,
+            // iar pe ecranul principal nu face nimic, ca la orice launcher.
+            onBackInvokedDispatcher.registerOnBackInvokedCallback(
+                OnBackInvokedDispatcher.PRIORITY_DEFAULT,
+                OnBackInvokedCallback { if (drawerOpen) closeDrawer(true) }
+            )
+        }
     }
 
     override fun onResume() {
@@ -155,7 +166,7 @@ class MainActivity : Activity() {
         super.onDestroy()
     }
 
-    override fun onNewIntent(intent: Intent?) {
+    override fun onNewIntent(intent: Intent) {
         super.onNewIntent(intent)
         // butonul Home apăsat când launcher-ul e deja deschis
         closeDrawer(true)
@@ -578,10 +589,11 @@ class MainActivity : Activity() {
     }
 
     private fun needsUpdate(c: RemoteConfig) =
-        c.updateCode > BuildConfig.VERSION_CODE && c.updateUrl.startsWith("http") &&
+        !BuildConfig.IS_PLAY && c.updateCode > BuildConfig.VERSION_CODE && c.updateUrl.startsWith("http") &&
             (c.updateForce || prefs.updateDismissed != c.updateCode)
 
     private fun popupDue(p: PopupCfg): Boolean {
+        if (BuildConfig.IS_PLAY) return false // Google Play nu permite popup-uri neașteptate
         if (!p.enabled || p.id.isBlank() || (p.title.isBlank() && p.imageUrl.isBlank())) return false
         val now = System.currentTimeMillis()
         if (now - prefs.lastPopupAny < 45_000L) return false

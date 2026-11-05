@@ -48,8 +48,9 @@ jobs:
           chmod +x gradlew
           echo "sdk.dir=$ANDROID_HOME" > local.properties
           yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses > /dev/null || true
-          ./gradlew assembleRelease --no-daemon --stacktrace
-          cp app/build/outputs/apk/release/app-release.apk NeoLauncher.apk
+          ./gradlew assembleGithubRelease bundlePlayRelease --no-daemon --stacktrace
+          cp app/build/outputs/apk/github/release/app-github-release.apk NeoLauncher.apk
+          cp app/build/outputs/bundle/playRelease/app-play-release.aab NeoLauncher-play.aab
 
       - name: Publică în Releases
         uses: softprops/action-gh-release@v2
@@ -59,5 +60,9 @@ jobs:
           body: |
             Descarcă **NeoLauncher.apk** de mai jos și instalează-l pe telefon.
             Cod versiune (pentru panoul de admin): **${{ github.run_number }}**
-          files: NeoLauncher.apk
+
+            `NeoLauncher-play.aab` este pachetul pentru Google Play Console.
+          files: |
+            NeoLauncher.apk
+            NeoLauncher-play.aab
           make_latest: true
