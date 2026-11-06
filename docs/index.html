@@ -134,6 +134,16 @@
             <option value="hologram">Hologramă de sticlă</option>
             <option value="hud">HUD spațial</option>
             <option value="matrix">Matrix digital</option>
+            <option value="aurora">Aurora boreală</option>
+            <option value="inferno">Infern de lavă</option>
+            <option value="ocean">Adâncul oceanului</option>
+            <option value="galaxy">Galaxie spirală</option>
+            <option value="circuit">Circuit cuantic</option>
+            <option value="storm">Furtună electrică</option>
+            <option value="neoncity">Oraș neon</option>
+            <option value="frost">Cristale de gheață</option>
+            <option value="sakura">Sakura la lună plină</option>
+            <option value="plexus">Constelație</option>
           </select></div>
       </div>
       <label class="switch"><input type="checkbox" id="forceTheme"><i></i> Blochează tema (utilizatorii nu o pot schimba)</label>
@@ -380,7 +390,27 @@ const THEMES = {
   hud: { bg: "#000814", p: "#FFB000", s: "#4CC9F0", t: "#FFF4DC", r: "0px", font: "'JetBrains Mono',monospace",
     fx: "radial-gradient(circle at 50% 56%,transparent 30%,rgba(76,201,240,.25) 30.5%,transparent 31%,transparent 45%,rgba(76,201,240,.2) 45.5%,transparent 46%),radial-gradient(#06142b,#000)" },
   matrix: { bg: "#000000", p: "#00FF41", s: "#7DFF9B", t: "#D9FFE2", r: "2px", font: "'JetBrains Mono',monospace",
-    fx: "repeating-linear-gradient(90deg,rgba(0,255,65,.18) 0 2px,transparent 2px 15px),#000" }
+    fx: "repeating-linear-gradient(90deg,rgba(0,255,65,.18) 0 2px,transparent 2px 15px),#000" },
+  aurora: { bg: "#020B16", p: "#3DFFB0", s: "#B07CFF", t: "#EFFFF8", r: "18px", font: "system-ui,sans-serif",
+    fx: "radial-gradient(ellipse at 40% 25%,rgba(61,255,176,.45),transparent 45%),radial-gradient(ellipse at 70% 30%,rgba(176,124,255,.4),transparent 45%),linear-gradient(#01030a,#04162a 60%,#0a2a3a)" },
+  inferno: { bg: "#120202", p: "#FF6A00", s: "#FFD23F", t: "#FFF1E0", r: "6px", font: "'Chakra Petch',sans-serif",
+    fx: "radial-gradient(ellipse at 50% 110%,rgba(255,120,20,.9),rgba(255,40,0,.35) 45%,transparent 70%),linear-gradient(#070000,#1e0402 60%,#5a0e02)" },
+  ocean: { bg: "#001424", p: "#2EE6FF", s: "#7B8CFF", t: "#E6FBFF", r: "24px", font: "system-ui,sans-serif",
+    fx: "linear-gradient(100deg,transparent 30%,rgba(200,245,255,.12) 35%,transparent 42%),linear-gradient(#0b4a6b,#022a44 35%,#000c18)" },
+  galaxy: { bg: "#03010A", p: "#FFC46B", s: "#9D7BFF", t: "#FFF6E8", r: "14px", font: "Georgia,serif",
+    fx: "radial-gradient(ellipse 50% 22% at 50% 45%,rgba(255,240,210,.9),rgba(255,180,100,.35) 30%,rgba(157,123,255,.25) 60%,transparent 75%),#03010a" },
+  circuit: { bg: "#00080A", p: "#00FFD5", s: "#FF3D81", t: "#E2FFFA", r: "0px", font: "'JetBrains Mono',monospace",
+    fx: "linear-gradient(rgba(0,255,213,.12) 1px,transparent 1px) 0 0/26px 26px,linear-gradient(90deg,rgba(0,255,213,.12) 1px,transparent 1px) 0 0/26px 26px,#00080a" },
+  storm: { bg: "#05070D", p: "#9CC9FF", s: "#E5F0FF", t: "#EEF4FF", r: "8px", font: "system-ui,sans-serif",
+    fx: "repeating-linear-gradient(100deg,rgba(229,240,255,.12) 0 1px,transparent 1px 9px),linear-gradient(#141a2a,#0a0e18 50%,#04060b)" },
+  neoncity: { bg: "#07031A", p: "#FF4FD8", s: "#46E8FF", t: "#FFF0FB", r: "4px", font: "'Chakra Petch',sans-serif",
+    fx: "linear-gradient(transparent 62%,#06030f 62%),radial-gradient(circle at 75% 18%,#ffdcf0 0 9%,transparent 16%),linear-gradient(#05021a,#2a0b4a 55%,#7a1f6e)" },
+  frost: { bg: "#071528", p: "#BDEBFF", s: "#7FB4FF", t: "#F5FCFF", r: "16px", font: "system-ui,sans-serif",
+    fx: "radial-gradient(circle,rgba(255,255,255,.7) 1px,transparent 1.5px) 0 0/22px 22px,linear-gradient(#04101f,#0d2a4a 60%,#3a6e96)" },
+  sakura: { bg: "#140A1E", p: "#FF9EC7", s: "#FFE2B8", t: "#FFF3F8", r: "28px", font: "Georgia,serif",
+    fx: "radial-gradient(circle at 68% 30%,#fff6e6 0 18%,rgba(255,210,200,.35) 22%,transparent 40%),linear-gradient(#0d0620,#3a1840 60%,#8a3d5e)" },
+  plexus: { bg: "#04030E", p: "#7CF9FF", s: "#FF7BEA", t: "#F1F0FF", r: "12px", font: "system-ui,sans-serif",
+    fx: "radial-gradient(circle,rgba(124,249,255,.8) 1.5px,transparent 2px) 0 0/48px 40px,radial-gradient(ellipse at 50% 40%,#120e33,#04030e)" }
 };
 function preview() {
   const th = THEMES[$("theme").value] || THEMES.cyberpunk;

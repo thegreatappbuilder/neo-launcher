@@ -15,7 +15,7 @@ Pașii de mai jos sunt doar pentru referință, dacă vreodată refaci totul de 
 ---
 
 
-Launcher Android futurist cu 4 moduri vizuale (Cyberpunk Neon, Hologramă de sticlă, HUD spațial, Matrix digital), efecte animate la atingere, wallpaper live, APK construit automat pe GitHub și panou de admin pentru reclame popup, banner, temă și actualizări.
+Launcher Android futurist cu 14 teme animate (Cyberpunk, Hologramă, HUD spațial, Matrix, Aurora, Infern, Ocean, Galaxie, Circuit, Furtună, Oraș neon, Gheață, Sakura, Constelație), efecte animate la atingere, wallpaper live, APK construit automat pe GitHub și panou de admin pentru reclame popup, banner, temă și actualizări.
 
 Durează cam 20–30 de minute, o singură dată. Cel mai ușor e de pe un calculator.
 

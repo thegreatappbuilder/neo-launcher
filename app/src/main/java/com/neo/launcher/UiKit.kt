@@ -31,12 +31,7 @@ object UiKit {
     fun alpha(color: Int, a: Int): Int =
         Color.argb(a.coerceIn(0, 255), Color.red(color), Color.green(color), Color.blue(color))
 
-    fun radiusDp(neo: NeoTheme): Float = when (neo.id) {
-        "hologram" -> 22f
-        "cyberpunk" -> 4f
-        "hud" -> 0f
-        else -> 2f
-    }
+    fun radiusDp(neo: NeoTheme): Float = neo.radius
 
     fun box(
         ctx: Context,
@@ -54,7 +49,7 @@ object UiKit {
     }
 
     fun iconFrame(ctx: Context, neo: NeoTheme): GradientDrawable =
-        if (neo.id == "hologram") {
+        if (neo.roundIcons) {
             GradientDrawable().apply {
                 shape = GradientDrawable.OVAL
                 setColor(alpha(Color.WHITE, 26))

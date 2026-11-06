@@ -8,6 +8,7 @@ import android.graphics.Typeface
 import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
 import android.provider.Settings
+import android.text.TextUtils
 import android.view.Gravity
 import android.view.View
 import android.view.WindowInsets
@@ -79,7 +80,18 @@ class SettingsActivity : Activity() {
         // teme
         section(col, "MOD VIZUAL")
         if (prefs.themeLocked) note(col, "🔒  Tema este setată de administrator.")
-        for (t in NeoTheme.ALL) col.addView(themeCard(t), LinearLayout.LayoutParams(-1, -2).apply { bottomMargin = dp(12f) })
+        note(col, "${NeoTheme.ALL.size} teme. Atinge una ca s-o activezi.")
+        // grilă pe două coloane
+        NeoTheme.ALL.chunked(2).forEach { pair ->
+            val row = LinearLayout(this).apply { orientation = LinearLayout.HORIZONTAL }
+            pair.forEachIndexed { i, t ->
+                row.addView(themeCard(t), LinearLayout.LayoutParams(0, -2, 1f).apply {
+                    if (i == 1) leftMargin = dp(10f)
+                })
+            }
+            if (pair.size == 1) row.addView(View(this), LinearLayout.LayoutParams(0, 0, 1f).apply { leftMargin = dp(10f) })
+            col.addView(row, LinearLayout.LayoutParams(-1, -2).apply { topMargin = dp(10f) })
+        }
 
         // efecte
         section(col, "EFECTE SPECIALE")
@@ -208,7 +220,7 @@ class SettingsActivity : Activity() {
         val card = LinearLayout(this).apply {
             orientation = LinearLayout.VERTICAL
             background = UiKit.box(this@SettingsActivity, t, 200, if (selected) 255 else 80, if (selected) 2.2f else 1f)
-            setPadding(dp(10f), dp(10f), dp(10f), dp(12f))
+            setPadding(dp(7f), dp(7f), dp(7f), dp(10f))
             if (locked && !selected) alpha = 0.45f
         }
         val preview = FxView(this).apply {
@@ -218,18 +230,21 @@ class SettingsActivity : Activity() {
             clipToOutline = true
         }
         previews.add(preview)
-        card.addView(preview, LinearLayout.LayoutParams(-1, dp(120f)))
-        val row = LinearLayout(this).apply {
-            orientation = LinearLayout.HORIZONTAL
-            gravity = Gravity.CENTER_VERTICAL
-            setPadding(dp(4f), dp(10f), dp(4f), 0)
+        card.addView(preview, LinearLayout.LayoutParams(-1, dp(118f)))
+        val texts = LinearLayout(this).apply {
+            orientation = LinearLayout.VERTICAL
+            setPadding(dp(3f), dp(8f), dp(3f), 0)
         }
-        val texts = LinearLayout(this).apply { orientation = LinearLayout.VERTICAL }
-        texts.addView(UiKit.label(this, t, t.title, 16f, t.primary))
-        texts.addView(UiKit.label(this, t, t.subtitle, 12f, t.dim, glow = false))
-        row.addView(texts, LinearLayout.LayoutParams(0, -2, 1f))
-        if (selected) row.addView(UiKit.label(this, t, "● ACTIV", 11f, t.secondary))
-        card.addView(row)
+        texts.addView(UiKit.label(this, t, (if (selected) "● " else "") + t.title, 14f, t.primary).apply {
+            maxLines = 1
+            ellipsize = TextUtils.TruncateAt.END
+        })
+        texts.addView(UiKit.label(this, t, t.subtitle, 11f, t.dim, glow = false).apply {
+            maxLines = 2
+            minLines = 2
+            ellipsize = TextUtils.TruncateAt.END
+        })
+        card.addView(texts)
         card.setOnClickListener {
             when {
                 selected -> Unit

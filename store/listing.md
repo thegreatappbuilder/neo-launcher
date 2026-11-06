@@ -1,21 +1,31 @@
 # Pagina din Google Play
 
-**Nume (max 30):** NEO Launcher – Teme Futuriste
+**Nume (max 30):** NEO Launcher – Teme Animate
 
-**Descriere scurtă (max 80):** Launcher futurist: 4 teme animate, efecte la atingere și wallpaper live.
+**Descriere scurtă (max 80):** Launcher cu 14 teme animate, efecte la atingere și wallpaper live.
 
 **Descriere completă:**
 
-Transformă ecranul principal într-o interfață SF. NEO Launcher îți aduce patru moduri vizuale animate, fiecare cu efecte proprii care reacționează la atingere.
+Transformă ecranul principal într-o interfață SF. NEO Launcher îți aduce 14 teme animate, fiecare cu efecte proprii care reacționează la atingere.
 
-◆ 4 MODURI VIZUALE
-• Cyberpunk Neon – soare synthwave, grilă în perspectivă, linii de scanare și glitch
-• Hologramă de sticlă – sfere de sticlă plutitoare, valuri de lumină și particule
-• HUD spațial – salt prin stele, radar cu baleiaj și interfață de navă
-• Matrix digital – ploaie de cod verde, cu iconițe în stil terminal
+◆ 14 TEME ANIMATE
+• Cyberpunk Neon – soare synthwave, grilă în perspectivă și glitch
+• Hologramă de sticlă – sfere de sticlă plutitoare și valuri de lumină
+• HUD spațial – salt prin stele și radar cu baleiaj
+• Matrix digital – ploaie de cod verde
+• Aurora boreală – perdele de lumină polară peste munți
+• Infern de lavă – scântei, magmă și val de căldură
+• Adâncul oceanului – raze de lumină, bule și meduze luminoase
+• Galaxie spirală – sute de stele care se rotesc
+• Circuit cuantic – impulsuri de energie pe trasee electronice
+• Furtună electrică – ploaie, nori și fulgere la atingere
+• Oraș neon – zgârie-nori, ferestre aprinse și mașini zburătoare
+• Cristale de gheață – ninsoare cu fulgi de cristal
+• Sakura la lună plină – petale de cireș care plutesc
+• Constelație – rețea de particule atrasă de deget
 
 ◆ EFECTE LA ATINGERE
-Atinge ecranul și vezi unde de lumină. În HUD stelele accelerează, în Matrix coloanele de cod se trezesc sub deget.
+Fiecare temă reacționează altfel: fulgerul lovește unde atingi, scânteile explodează, fulgii fug de deget, iar galaxia se rotește mai repede.
 
 ◆ WALLPAPER LIVE
 Pune efectele și pe ecranul de blocare, cu wallpaper-ul animat NEO Live.
